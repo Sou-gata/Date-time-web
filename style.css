@@ -250,9 +250,24 @@ body {
   padding: 0 20px;
   text-align: center;
 }
-.month i {
-  font-size: 45px;
+.prev,
+.next {
+  height: 40px;
+  width: 40px;
+  background: none;
+  outline: none;
+  /* border: 2px solid #ff00c0; */
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+.prev:active,
+.next:active {
+  font-size: 25px;
 }
 .month p {
   font-size: 20px;
