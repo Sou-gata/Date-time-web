@@ -1,401 +1,492 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;500;600;700&display=swap");
 :root {
-  --leniar-gradient: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00c0);
+    --leniar-gradient: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00c0);
 }
 * {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
 }
 body {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000000;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
 }
 .main {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80vw;
-  height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+    height: 100vh;
 }
 
 /* Digital Clock Styling */
 
 .tewlve-clock,
 .twentyfour-clock {
-  height: 100px;
-  width: 360px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--leniar-gradient);
-  border-radius: 10px;
-  opacity: 1;
-  transition: all 0.3s ease;
-  animation: animate 1.5s linear infinite;
+    height: 100px;
+    width: 360px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--leniar-gradient);
+    border-radius: 10px;
+    opacity: 1;
+    transition: all 0.3s ease;
+    animation: animate 1.5s linear infinite;
 }
 .display,
 .tewlve-clock span,
 .twentyfour-clock span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
 }
 .display {
-  background: #000000;
-  height: 85px;
-  width: 345px;
-  border-radius: 6px;
-  text-align: center;
-  z-index: 2;
+    background: #000000;
+    height: 86px;
+    width: 346px;
+    border-radius: 6px;
+    text-align: center;
+    z-index: 2;
 }
 .display::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  border-radius: 6px 6px 0px 0px;
-  opacity: 1;
-  background: rgba(255, 255, 255, 0.2);
-  clip-path: polygon(10% 100%, 90% 100%, 100% 50%, 100% 0, 0 0, 0 50%);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    border-radius: 6px 6px 0px 0px;
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.2);
+    clip-path: polygon(10% 100%, 90% 100%, 100% 50%, 100% 0, 0 0, 0 50%);
 }
 .time12,
 .time24 {
-  line-height: 85px;
-  width: 345px;
-  font-size: 50px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  background: var(--leniar-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: absolute;
-  text-align: center;
-  animation: animate 1.5s linear infinite;
+    line-height: 85px;
+    width: 345px;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: var(--leniar-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    text-align: center;
+    animation: animate 1.5s linear infinite;
 }
 .tewlve-clock span,
 .twentyfour-clock span {
-  height: 100%;
-  width: 100%;
-  background: inherit;
-  filter: blur(20px);
+    height: 100%;
+    width: 100%;
+    background: inherit;
+    filter: blur(20px);
 }
 .tewlve-clock.hide,
 .twentyfour-clock.hide,
 .analog-con.hide {
-  opacity: 0;
-  pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Analog Clock Styling */
 
 .wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border-radius: 50%;
-  background: var(--leniar-gradient);
-  animation: animate 2s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+    background: var(--leniar-gradient);
+    animation: animate 2s linear infinite;
 }
 .bg {
-  background: #000000;
-  height: 285px;
-  width: 285px;
-  border-radius: 50%;
-  position: absolute;
+    background: #000000;
+    height: 285px;
+    width: 285px;
+    border-radius: 50%;
+    position: absolute;
 }
 .clock-analog {
-  width: 300px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url(./clock.png);
-  background-size: contain;
-  z-index: 2;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(./clock.png);
+    background-size: contain;
+    z-index: 2;
 }
 .clock-analog:before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: #ffffff;
-  border-radius: 50%;
-  z-index: 10;
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    border-radius: 50%;
+    z-index: 10;
 }
 .clock-analog .hou,
 .clock-analog .min,
 .clock-analog .sec {
-  position: absolute;
+    position: absolute;
 }
 .clock-analog .hou,
 .hr {
-  height: 140px;
-  width: 140px;
+    height: 140px;
+    width: 140px;
 }
 .clock-analog .min,
 .mn {
-  height: 170px;
-  width: 170px;
+    height: 170px;
+    width: 170px;
 }
 .clock-analog .sec,
 .sc {
-  height: 185px;
-  width: 185px;
+    height: 185px;
+    width: 185px;
 }
 .hr,
 .mn,
 .sc {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-radius: 50%;
 }
 .hr:before {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 70px;
-  background: var(--leniar-gradient);
-  z-index: 1;
-  border-radius: 6px 6px 0 0;
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 70px;
+    background: var(--leniar-gradient);
+    z-index: 1;
+    border-radius: 6px 6px 0 0;
 }
 .mn:before {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 85px;
-  background: var(--leniar-gradient);
-  z-index: 2;
-  border-radius: 6px 6px 0 0;
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 85px;
+    background: var(--leniar-gradient);
+    z-index: 2;
+    border-radius: 6px 6px 0 0;
 }
 .sc:before {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 115px;
-  background: var(--leniar-gradient);
-  z-index: 3;
-  border-radius: 6px 6px 0 0;
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 115px;
+    background: var(--leniar-gradient);
+    z-index: 3;
+    border-radius: 6px 6px 0 0;
 }
 .glow {
-  background: var(--leniar-gradient);
-  height: 410px;
-  width: 410px;
-  border-radius: 50%;
-  position: absolute;
+    background: var(--leniar-gradient);
+    height: 410px;
+    width: 410px;
+    border-radius: 50%;
+    position: absolute;
 }
 .glow {
-  height: 100%;
-  width: 100%;
-  background: inherit;
-  filter: blur(20px);
-  z-index: -1;
+    height: 100%;
+    width: 100%;
+    background: inherit;
+    filter: blur(20px);
+    z-index: -1;
 }
 
 /* Calendar Styling */
 
 .calendar-con {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 510px;
-  width: 410px;
-  background: var(--leniar-gradient);
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  opacity: 1;
-  animation: animate 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 510px;
+    width: 410px;
+    background: var(--leniar-gradient);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    opacity: 1;
+    animation: animate 2s linear infinite;
 }
 .calendar-con.hide {
-  opacity: 0;
-  pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
 }
 .calendar {
-  background: #000000;
-  border-radius: 6px;
-  z-index: 2;
+    background: #000000;
+    border-radius: 6px;
+    z-index: 2;
 }
 .calendar-main {
-  width: 400px;
-  height: 500px;
-  color: #ffffff;
-  background: #000000;
+    width: 400px;
+    height: 500px;
+    background: #000000;
 }
 .month {
-  width: 360px;
-  height: 100px;
-  background: var(--leniar-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  text-align: center;
+    width: 360px;
+    height: 100px;
+    background: var(--leniar-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    text-align: center;
 }
 .prev,
 .next {
-  height: 40px;
-  width: 40px;
-  background: none;
-  outline: none;
-  /* border: 2px solid #ff00c0; */
-  border: none;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    height: 40px;
+    width: 40px;
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 .prev:active,
 .next:active {
-  font-size: 25px;
+    font-size: 25px;
 }
 .month p {
-  font-size: 20px;
-  font-family: "Dancing Script", cursive;
-  font-weight: 600;
+    font-size: 20px;
+    font-family: "Dancing Script", cursive;
+    font-weight: 600;
 }
 .month h1 {
-  font-size: 25px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 .devider {
-  width: 100%;
-  height: 5px;
-  background: var(--leniar-gradient);
+    width: 100%;
+    height: 5px;
+    background: var(--leniar-gradient);
 }
 .weekdays {
-  width: 100%;
-  height: 45px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  background: var(--leniar-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+    width: 100%;
+    height: 47px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background: var(--leniar-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .weekdays div {
-  width: 47px;
-  height: 47px;
-  margin: 0 4px;
-  font-size: 18px;
-  display: flex;
-  font-size: 15px;
-  justify-content: center;
-  align-items: center;
+    width: 47px;
+    height: 47px;
+    margin: 0 4px;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
 }
 .days {
-  padding: 0 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  background: var(--leniar-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+    padding: 0 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: var(--leniar-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .days div {
-  display: flex;
-  font-size: 18px;
-  font-weight: 600;
-  justify-content: center;
-  align-items: center;
-  margin: 4px;
-  width: 47px;
-  height: 47px;
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    width: 47px;
+    height: 47px;
 }
 .today {
-  border: 2px solid #14ffe9;
-  border-radius: 50%;
+    border: 2px solid #14ffe9;
+    border-radius: 50%;
 }
 .sunday {
-  font-family: "Dancing Script", cursive;
+    font-family: "Dancing Script", cursive;
 }
 .calendar-glow {
-  position: absolute;
-  top: 0;
-  height: 510px;
-  width: 410px;
-  background: var(--leniar-gradient);
-  z-index: -2;
-  filter: blur(20px);
+    position: absolute;
+    top: 0;
+    height: 510px;
+    width: 410px;
+    background: var(--leniar-gradient);
+    z-index: -2;
+    filter: blur(20px);
 }
 .prev-date,
 .next-date {
-  border-bottom: 1px solid #14ffe9;
-  border-top: 1px solid #14ffe9;
+    border-bottom: 1px solid #14ffe9;
+    border-top: 1px solid #14ffe9;
+}
+.next-date:first-child {
+    border: 1px solid #14ffe9;
 }
 
 /* Buttons Styling */
 
 .pre-content,
 .next-content {
-  height: 50px;
-  width: 50px;
-  border: 2px solid #14ffe9;
-  border-radius: 50px;
-  outline: none;
-  background: var(--leniar-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 30px;
-  font-weight: 600;
-  cursor: pointer;
-  position: relative;
-  line-height: 50px;
-  transition: all 0.2s ease;
-  z-index: 3;
-  animation: animate 2s linear infinite;
+    height: 50px;
+    width: 50px;
+    border: 2px solid #14ffe9;
+    border-radius: 50px;
+    outline: none;
+    background: var(--leniar-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    line-height: 50px;
+    transition: all 0.2s ease;
+    z-index: 3;
+    animation: animate 2s linear infinite;
 }
 .pre-content::before,
 .next-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  border-radius: 50px 50px 0px 0px;
-  opacity: 1;
-  background: rgba(255, 255, 255, 0.2);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    border-radius: 50px 50px 0px 0px;
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.2);
 }
 .pre-content:active,
 .next-content:active {
-  font-size: 25px;
+    font-size: 25px;
 }
 
 /* Animations */
 
 @keyframes animate {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+/* Responsive media query */
+
+@media (max-width: 550px) {
+    .tewlve-clock,
+    .twentyfour-clock {
+        height: 85px;
+        width: 306px;
+    }
+    .display {
+        height: 75px;
+        width: 296px;
+    }
+    .time12,
+    .time24 {
+        line-height: 75px;
+        width: 296px;
+        font-size: 40px;
+    }
+
+    .main {
+        flex-direction: column;
+        justify-content: space-around;
+        height: calc(100vh - 40px);
+    }
+    .pre-content,
+    .next-content {
+        transform: rotate(90deg);
+    }
+    .calendar-con {
+        height: 386px;
+        width: 310px;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .calendar-main {
+        height: 378px;
+        width: 302px;
+    }
+    .month {
+        width: calc(100% - 20px);
+        padding: 10px;
+        height: 50px;
+    }
+    .devider {
+        height: 4px;
+    }
+    .weekdays {
+        height: 30px;
+        font-size: 15px;
+    }
+    .prev,
+    .next {
+        font-size: 20px;
+    }
+    .month h1 {
+        font-size: 20px;
+    }
+    .month p {
+        font-size: 15px;
+    }
+    .days {
+        margin-top: 15px;
+    }
+    .days div {
+        height: 35px;
+        width: 35px;
+        margin: 2px;
+        font-size: 15px;
+    }
+    .today {
+        border: 1px solid #14ffe9;
+    }
+    .pre-content,
+    .next-content {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        font-size: 25px;
+    }
 }
