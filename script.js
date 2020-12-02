@@ -121,16 +121,29 @@ function SetProerty(a) {
 for (let b = 1; b < Elements.length; b++) {
     Elements[b].classList.add("hide");
 }
-NextBtn.addEventListener("click", function () {
+document.addEventListener("keyup", (e) => {
+    if (e.key == "ArrowRight") {
+        NextBtn.click();
+    }
+});
+document.addEventListener("keyup", (e) => {
+    if (e.key == "ArrowLeft") {
+        PrevBtn.click();
+    }
+});
+NextBtn.addEventListener("click", () => {
     count++;
     if (count > Elements.length - 1) count = 0;
     SetProerty(count);
 });
-PrevBtn.addEventListener("click", function () {
+PrevBtn.addEventListener("click", () => {
     count--;
     if (count < 0) count = Elements.length - 1;
     SetProerty(count);
 });
+Clock();
+AnalogClock();
+Calendar();
 setInterval(Clock, 1000);
 setInterval(AnalogClock, 1000);
-Calendar();
+setInterval(Calendar, 60000);
